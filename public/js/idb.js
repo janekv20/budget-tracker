@@ -20,3 +20,9 @@ request.onerror = function (event) {
     console.log(event.target.errorCode);
 };
 
+function saveRecord(record) {
+    const transaction = db.transaction(['transaction'], 'readwrite');
+    const store = transaction.objectStore('transaction');
+
+    store.add(record);
+}
