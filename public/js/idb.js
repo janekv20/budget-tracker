@@ -50,6 +50,8 @@ function uploadTransaction() {
                 const transaction = db.transaction(['transaction', 'readwrite']);
                 const store = transaction.objectStore('transaction');
                 store.clear();
+
+                alert('All of your saved transactions have been submitted.')
             })
             .catch(err => {
                 console.log(err);
